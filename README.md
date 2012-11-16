@@ -19,7 +19,8 @@ Data is several times larger than memory, so we can be sure there isn't too much
  caching. To be safe I reboot the (Virtual) machine after each test run.
 
 ### Data File
-`generateData.py` to generate about 2GB of integegers. One int per line.
+`generateData.py` to generate about 2GB of integegers. One int between 0 and 1000
+per line, 531723486 lines.
 	-rw-rw-r-- 1 ec2-user ec2-user 2.0G Nov 16 04:29 data.txt
 
 ### Results
@@ -36,6 +37,14 @@ was running.
 
 
 `naive_buffered.py`
+	[ec2-user@domU-12-31-39-06-C9-4D iteratortester]$ time python naive_nativebuffer.py data.txt 
+	The total was... 265595677623
+
+	real	31m27.858s
+	user	30m21.678s
+	sys	0m6.076s
+
+`chmullig_buffered.py`
 
 ### System Info
 	Linux domU-12-31-39-06-C9-4D 3.2.30-49.59.amzn1.x86_64 #1 SMP Wed Oct 3 19:54:33 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
