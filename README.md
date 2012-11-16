@@ -9,7 +9,7 @@ naive.py is the simplest implementation we discussed
 naive_nativebuffer.py uses the builtin open() command's buffer to attempt to 
 speed things up
 
-chmullig_buffered.py is an attempt to do some intelligent buffering in python
+chmullig_buffer.py is an attempt to do some intelligent buffering in python
 
 ## Timing on an ec2.micro instance.
 Instance has ~600MB of RAM. It's a cloud virtual machine, so who knows what else
@@ -37,6 +37,7 @@ was running.
 
 
 `naive_buffered.py`
+
 	[ec2-user@domU-12-31-39-06-C9-4D iteratortester]$ time python naive_nativebuffer.py data.txt 
 	The total was... 265595677623
 
@@ -44,7 +45,16 @@ was running.
 	user	30m21.678s
 	sys	0m6.076s
 
-`chmullig_buffered.py`
+`chmullig_buffer.py`
+
+	[ec2-user@domU-12-31-39-06-C9-4D iteratortester]$ time python chmullig_buffer.py data.txt 
+	The total was... 265595677623
+
+	real	94m48.525s
+	user	91m32.063s
+	sys	0m19.761s
+
+
 
 ### System Info
 	Linux domU-12-31-39-06-C9-4D 3.2.30-49.59.amzn1.x86_64 #1 SMP Wed Oct 3 19:54:33 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
@@ -61,9 +71,7 @@ was running.
 	fpu_exception	: yes
 	cpuid level	: 13
 	wp		: yes
-	flags		: fpu de tsc msr pae cx8 sep cmov pat clflush mmx fxsr
-	                  sse sse2 ss ht syscall nx lm constant_tsc up rep_good
-	                  nopl pni ssse3 cx16 sse4_1 hypervisor lahf_lm
+	flags		: fpu de tsc msr pae cx8 sep cmov pat clflush mmx fxsr sse sse2 ss ht syscall nx lm constant_tsc up rep_good nopl pni ssse3 cx16 sse4_1 hypervisor lahf_lm
 	bogomips	: 5320.00
 	clflush size	: 64
 	cache_alignment	: 64

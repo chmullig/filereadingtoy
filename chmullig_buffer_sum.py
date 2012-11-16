@@ -38,6 +38,9 @@ class numberGenerator(object):
                 raise StopIteration()
 
 
-total = sum(int(x) for x in numberGenerator(numbers))
+total = 0
+for x in numberGenerator(numbers):
+	total += int(x)
 
 print "The total was... %s" % total
+
