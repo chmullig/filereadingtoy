@@ -1,0 +1,37 @@
+# Timing on an ec2.micro instance.
+Instance has ~600MB of RAM. It's shared, so who knows what else is going on.
+
+### Data File
+`generateData.py` to generate about 2GB of integegers. One int per line.
+	-rw-rw-r-- 1 ec2-user ec2-user 2.0G Nov 16 04:29 data.txt
+
+### Timings
+
+### System Info
+	Linux domU-12-31-39-06-C9-4D 3.2.30-49.59.amzn1.x86_64 #1 SMP Wed Oct 3 19:54:33 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+	processor	: 0
+	vendor_id	: GenuineIntel
+	cpu family	: 6
+	model		: 23
+	model name	: Intel(R) Xeon(R) CPU           E5430  @ 2.66GHz
+	stepping	: 10
+	microcode	: 0xa07
+	cpu MHz		: 2660.000
+	cache size	: 6144 KB
+	fpu		: yes
+	fpu_exception	: yes
+	cpuid level	: 13
+	wp		: yes
+	flags		: fpu de tsc msr pae cx8 sep cmov pat clflush mmx fxsr sse sse2 ss ht syscall nx lm constant_tsc up rep_good nopl pni ssse3 cx16 sse4_1 hypervisor lahf_lm
+	bogomips	: 5320.00
+	clflush size	: 64
+	cache_alignment	: 64
+	address sizes	: 38 bits physical, 48 bits virtual
+	power management:
+
+		     total       used       free     shared    buffers     cached
+	Mem:           594        587          6          0          3        549
+	-/+ buffers/cache:         34        559
+	Swap:            0          0          0
+
+	Python 2.6.8

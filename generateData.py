@@ -1,7 +1,7 @@
 import sys
 import random
 
-NUM_TO_GENERATE = 6*(10**9)
+NUM_TO_GENERATE = 1*(10**9)
 MAX_SIZE = 1000
 
 if len(sys.argv) > 1:
@@ -12,4 +12,4 @@ else:
 output = open(outfilename, 'w')
 
 for i in xrange(NUM_TO_GENERATE):
-    output.write(str(random.randint(0, MAX_SIZE)) + "\n")
+    output.write(str(i % MAX_SIZE) + "\n")
